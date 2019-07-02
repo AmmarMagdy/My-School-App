@@ -23,6 +23,8 @@ class AddNewStudentViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        print("We are in test branch")
     }
 
     @IBAction func doneBtnTapped(_ sender: UIButton) {
