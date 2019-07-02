@@ -13,6 +13,8 @@
 		44079D5022C782A300FB2F51 /* My_School_App_1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 44079D4E22C782A300FB2F51 /* My_School_App_1.xcdatamodeld */; };
 		44079D5222C782A500FB2F51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44079D5122C782A500FB2F51 /* Assets.xcassets */; };
 		44079D5522C782A500FB2F51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44079D5322C782A500FB2F51 /* LaunchScreen.storyboard */; };
+		44079D5D22C7941D00FB2F51 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44079D5C22C7941D00FB2F51 /* CoreDataHandler.swift */; };
+		44079D5F22C7E00D00FB2F51 /* AddNewStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44079D5E22C7E00D00FB2F51 /* AddNewStudentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		44079D5122C782A500FB2F51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44079D5422C782A500FB2F51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44079D5622C782A500FB2F51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44079D5C22C7941D00FB2F51 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
+		44079D5E22C7E00D00FB2F51 /* AddNewStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewStudentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +61,24 @@
 			isa = PBXGroup;
 			children = (
 				44079D4722C782A300FB2F51 /* AppDelegate.swift */,
-				44079D4922C782A300FB2F51 /* ViewController.swift */,
+				44079D6022C7E01800FB2F51 /* Controllers */,
 				44079D4B22C782A300FB2F51 /* Main.storyboard */,
 				44079D5122C782A500FB2F51 /* Assets.xcassets */,
 				44079D5322C782A500FB2F51 /* LaunchScreen.storyboard */,
 				44079D5622C782A500FB2F51 /* Info.plist */,
 				44079D4E22C782A300FB2F51 /* My_School_App_1.xcdatamodeld */,
+				44079D5C22C7941D00FB2F51 /* CoreDataHandler.swift */,
 			);
 			path = "My School App_1";
+			sourceTree = "<group>";
+		};
+		44079D6022C7E01800FB2F51 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44079D4922C782A300FB2F51 /* ViewController.swift */,
+				44079D5E22C7E00D00FB2F51 /* AddNewStudentViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +152,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				44079D4A22C782A300FB2F51 /* ViewController.swift in Sources */,
+				44079D5D22C7941D00FB2F51 /* CoreDataHandler.swift in Sources */,
 				44079D5022C782A300FB2F51 /* My_School_App_1.xcdatamodeld in Sources */,
 				44079D4822C782A300FB2F51 /* AppDelegate.swift in Sources */,
+				44079D5F22C7E00D00FB2F51 /* AddNewStudentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

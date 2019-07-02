@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="StudentInfo" representedClassName="StudentInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="studentAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentAge" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="studentDOB" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="studentFavSubject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="responsibleTeacher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Teachers" inverseName="studentInfo" inverseEntity="Teachers" syncable="YES"/>
+    </entity>
+    <entity name="Teachers" representedClassName="Teachers" syncable="YES" codeGenerationType="class">
+        <attribute name="teacherClass" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="teacherName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teacherSubject" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="studentInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StudentInfo" inverseName="responsibleTeacher" inverseEntity="StudentInfo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="StudentInfo" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="Teachers" positionX="112.94140625" positionY="3.8203125" width="128" height="103"/>
+    </elements>
 </model>
