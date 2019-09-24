@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var searchBarView: UISearchBar!
     @IBOutlet weak var studentTable: UITableView!
     
@@ -16,22 +16,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         studentList = CoreDataHandler.getAllCoreDataInfo()
-
+        
         studentTable.reloadData()
     }
-
-
+    
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
-   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return studentList?.count ?? 0
     }
@@ -44,7 +43,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let favSubjectLabe3 = cell.viewWithTag(3) as! UILabel
         let ageLabe4 = cell.viewWithTag(4) as! UILabel
         let dobLabel5 = cell.viewWithTag(5) as! UILabel
-
+        
         nameLabel.text = studentList?[indexPath.row].studentName
         addressLabe2.text = studentList?[indexPath.row].studentAddress
         favSubjectLabe3.text = studentList?[indexPath.row].studentFavSubject
@@ -60,16 +59,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-//            studentList?.remove(at: indexPath.row)
             studentList = CoreDataHandler.deleteCoreDataItem(student: studentList![indexPath.row])
-            
-//            tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .automatic)
-//            tableView.endUpdates()
-            
-            
-            
-//            CoreDataHandler.saveIntoCoreData(student: StudentInfo())
         }
     }
     

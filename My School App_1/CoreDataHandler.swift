@@ -12,15 +12,15 @@ import UIKit
 class CoreDataHandler: NSObject {
     
     static func getCoreDataObject () -> NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate // object from App Delegate
-        return appDelegate.persistentContainer.viewContext // object from Core Data
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
     }
     
     static func saveIntoCoreData (student:StudentInfo) {
         let context = getCoreDataObject()
-       
+        
         do {
-        try context.save()
+            try context.save()
             print("Saved")
         } catch (let error) {
             print(error.localizedDescription)
@@ -32,7 +32,7 @@ class CoreDataHandler: NSObject {
         var studentInfo = [StudentInfo]()
         
         do {
-       studentInfo = try context.fetch(StudentInfo.fetchRequest())
+            studentInfo = try context.fetch(StudentInfo.fetchRequest())
         } catch (let error) {
             print(error.localizedDescription)
         }
@@ -44,9 +44,9 @@ class CoreDataHandler: NSObject {
         context.delete(student)
         
         do {
-            try context.save() // <- remember to put this :)
+            try context.save()
         } catch {
-            // Do something... fatalerror
+            
         }
         
         return getAllCoreDataInfo()

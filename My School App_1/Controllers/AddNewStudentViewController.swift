@@ -8,7 +8,7 @@
 import UIKit
 
 class AddNewStudentViewController: UIViewController {
-
+    
     @IBOutlet weak var dobPicker: UIDatePicker!
     @IBOutlet weak var favSubject: UIPickerView!
     @IBOutlet weak var nameStudentTextField: UITextField!
@@ -21,12 +21,10 @@ class AddNewStudentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         print("We are in test branch")
     }
-
+    
     @IBAction func doneBtnTapped(_ sender: UIButton) {
         
         let newStudent = StudentInfo(context: CoreDataHandler.getCoreDataObject())
@@ -39,17 +37,17 @@ class AddNewStudentViewController: UIViewController {
         
         CoreDataHandler.saveIntoCoreData(student: newStudent)
         
-//        self.navigationController?.popViewController(animated: true)
-
+        self.navigationController?.popViewController(animated: true)
+        
         labelShowMessage.isHidden = true
-
+        
         guard !(nameStudentTextField.text?.isEmpty ?? true),
-         isValidName(name:  nameStudentTextField.text!) else {
-            labelShowMessage.isHidden = false
-            labelShowMessage.text = "Please Enter name"
-            return
+            isValidName(name:  nameStudentTextField.text!) else {
+                labelShowMessage.isHidden = false
+                labelShowMessage.text = "Please Enter name"
+                return
         }
-       
+        
         
     }
     
@@ -76,5 +74,5 @@ extension AddNewStudentViewController : UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         favSubjectTitle = subjects[row]
     }
-
+    
 }
